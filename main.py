@@ -50,6 +50,25 @@ def cnn_model(number_classes):
         # layers.Dense(number_of_classes, activation='softmax')
     ])
 
+
+
+
+def show_result(model):
+    plt.style.use('ggplot')
+    plt.figure(figsize=(10, 6))
+    plt.plot(model.history['accuracy'], label='train_accuracy')
+    plt.plot(model.history['val_accuracy'], label='test accuracy')
+    plt.plot(model.history['loss'], label='train_loss')
+    plt.plot(model.history['val_loss'], label='test loss')
+    plt.legend()
+    plt.xlabel('Epochs')
+    plt.ylabel('Loss/Accuracy')
+    # plt.title('CNN Model Digit Classification')
+    title = persian_text(f"طبقه بندی اعداد در کپچا")
+    plt.title(title)
+
+    plt.show()
+
 images = []
 
 
