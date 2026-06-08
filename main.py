@@ -69,6 +69,15 @@ def show_result(model):
 
     plt.show()
 
+
+
+x_train, x_test, y_train, y_test = load_dataset("New_Captcha_3\\*\\*")
+print(len(x_test))
+cnn = cnn_model(number_classes=9)
+final_model = cnn.fit(x_train, y_train, validation_data=(x_test, y_test), epochs=10)
+print(cnn.summary())
+print(final_model.history)
+
 images = []
 
 
